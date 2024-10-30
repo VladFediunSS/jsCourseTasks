@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw1_task2</title>
+</head>
+<body>
+    <h1>Task 2</h1>
+    <button onclick="calculation()">START</button>
+
+    <script>
+
+        function calculation() {
+
+            const firstNumber = prompt("First number");
+            const secondNumber = prompt("Second number");
+            
+            let a = Number(firstNumber);
+            let b = Number(secondNumber);
+
+            if (isNaN(a) || isNaN(b)){
+                alert('Incorrect input.');
+            } else {
+                let division_result;
+                if (b !== 0){
+                    division_result = a/b;
+                }else{
+                    division_result = '<division by zero>';
+                }
+                
+                alert(`Addition: ${a+b}\nAbs Subtraction: ${Math.abs(a-b)}\nMultiplication: ${a*b}\nDivision: ${division_result}`);
+
+            }
+            
+        }
+    </script>
+</body>
+</html>
