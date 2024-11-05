@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw1_task2</title>
+</head>
+<body>
+    <h1>Task 5</h1>
+    <button onclick="checkID()">START</button>
+
+    <script>
+
+        function checkID() {
+            const input = prompt("Input your ID")
+            try{
+                alert('Accepted ID: ' + validatedInput(input));
+            } catch(err) {
+                alert(err.name + ' : ' + err.message);
+            }
+                
+        }
+            
+        function validatedInput(input){
+            const value = Number(input)
+            if (Number(value) >= 1 && Number(value) <= 1000){
+                return value;
+            } else {
+                const err = new Error('Incorrect input. Use numbers in range: 1-1000.');
+                err.name = 'ID Error';
+                throw err;
+            }
+        }
+    </script>
+</body>
+</html>
