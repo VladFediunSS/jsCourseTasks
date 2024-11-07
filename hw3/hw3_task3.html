@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hw3_task3</title>
+</head>
+<body>
+        
+    <button id="btn">Live button!</button>
+
+    <script>
+
+        function sendMessage(message) {
+            const newDiv = document.createElement('div');
+            const newSpan = document.createElement('span');
+            newSpan.textContent = message;
+
+            newDiv.appendChild(newSpan);
+            document.body.appendChild(newDiv);
+        }
+
+        btn.addEventListener('click', () => sendMessage('I was pressed!'));
+        btn.addEventListener('mouseover', () => sendMessage('Mouse is on me!'));
+        btn.addEventListener('mouseout', () => sendMessage('Mouse is NOT on me!'));
+        
+    </script>
+</body>
+</html>

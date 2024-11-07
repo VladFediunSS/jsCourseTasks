@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hw3_task1</title>
+</head>
+<body>
+    <section>
+
+        <h2 class="header">Header</h2>
+        
+        <p id ='data'>DOM - document object model </p>
+        
+        <span>Span</span>
+        
+        <div>Invisible element</div>
+        
+        </section>
+        
+        <button onclick="addStyle()" id="btn">Add style</button>
+
+    <script>
+
+        function addStyle() {
+            const spanElement = document.getElementsByTagName('span')[0]
+            const pElement = document.getElementById('data')
+            const h2Element = document.getElementsByClassName('header')[0];
+            divElement = document.getElementsByTagName('div')[0];
+
+            spanElement.style.color = 'red';
+            spanElement.style.textDecoration = 'underline';
+            pElement.style.color = 'brown';
+            pElement.style.fontSize = '18px';
+            pElement.style.fontFamily = 'Comic Sans MS';
+            h2Element.style.color = 'green';
+            h2Element.style.fontStyle = 'italic';
+            divElement.style.display = 'none';
+
+            console.log(document.body.children);
+        }
+        
+    </script>
+</body>
+</html>
