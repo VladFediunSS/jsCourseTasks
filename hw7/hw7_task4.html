@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw7_task4</title>
+</head>
+<body>
+    <h1>Email list</h1>
+    <button onclick="getEmails()">Get emails</button>
+    <div id="email-list"></div>
+    <script>
+        const emailList = document.getElementById('email-list');
+
+        async function getEmails() {
+            emailList.innerHTML = "";
+            const ul = document.createElement("ul");
+
+            try{
+                const res = await fetch('https://fakestoreapi.com/users');
+                const data = await res.json();
+                data.forEach(element => {
+                    const li = document.createElement("li");
+                    li.textContent = element.email;
+                    ul.appendChild(li);
+                });
+                emailList.appendChild(ul);
+            } catch(err) {
+                console.log(err);
+            }
+        }
+    </script>
+</body>
+</html>
