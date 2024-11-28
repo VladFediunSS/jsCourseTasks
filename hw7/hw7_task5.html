@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw7_task5</title>
+</head>
+<body>
+    <input type="text" id="userNameInput" placeholder="Enter user name">
+    <button id="getUserButton">GET USER CITY BY Name</button>
+    <br>
+    <span id="userCity"></span>
+    <script>
+        //Leanne Graham
+        async function getUsers() {
+            const input = document.getElementById('userNameInput').value.trim();
+            const cityOutput = document.getElementById('userCity');
+            
+            if (input) {
+                try{
+                const res = await fetch('https://jsonplaceholder.typicode.com/users');
+                const data = await res.json();
+                const user = data.find(element => element.name === input)
+                
+                cityOutput.innerHTML = user ? user.address.city : 'No such user';
+                
+                } catch(err) {
+                    console.log(err);
+                }
+
+            } else {
+                cityOutput.innerHTML = 'Input user name';
+            }
+            
+        }
+
+        getUserButton.addEventListener('click', getUsers);
+    </script>
+</body>
+</html>
